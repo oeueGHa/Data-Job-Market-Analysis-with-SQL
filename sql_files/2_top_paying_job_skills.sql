@@ -9,8 +9,8 @@ WITH top_paying_jobs AS(
     WHERE job_title_short = 'Business Analyst'
         AND job_location = 'Anywhere'
         AND salary_year_avg IS NOT NULL
-    ORDER BY salary_year_avg DESC
-    LIMIT 10
+    --ORDER BY salary_year_avg DESC
+    --LIMIT 10
 )
 
 SELECT
@@ -20,6 +20,9 @@ FROM top_paying_jobs
 INNER JOIN skills_job_dim ON skills_job_dim.job_id = top_paying_jobs.job_id
 INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
  ORDER BY salary_year_avg DESC
+ LIMIT 10
+
+
 
  /**
  ___FOR DATA ANALYST___
@@ -27,24 +30,24 @@ INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
 
 If your goal is to qualify for top-paying analyst positions, prioritize:
 
-Tier 1 (Essential)
-SQL
-Python
-Tableau or Power BI
-Excel
+Tier 1 (Essential):
+  SQL
+  Python
+  Tableau or Power BI
+  Excel
 
-Tier 2 (High Salary Boost)
-Snowflake
-AWS
-Azure
-Pandas
+Tier 2 (High Salary Boost):
+  Snowflake
+  AWS
+  Azure
+  Pandas
 
-Tier 3 (Senior-Level Differentiators)
-Databricks
-PySpark
-Git/GitLab
-Jira/Confluence
-Overall Conclusion
+Tier 3 (Senior-Level Differentiators):
+  Databricks
+  PySpark
+  Git/GitLab
+  Jira/Confluence
+  Overall Conclusion
 
 The dataset shows that the highest-paying data analyst jobs in 2023 rewarded a combination of:
 SQL + Python + Visualization + Cloud/Data Platform skills
@@ -55,36 +58,31 @@ SQL remains the universal requirement, while Python is the strongest differentia
 
 
 ___FOR BUSINESS ANALYST___
-Tier 1: Must-Have Skills
+Tier 1: Must-Have Skills:
+  SQL
+  Python
+  Excel
 
-SQL
-Python
-Excel
+Tier 2: High-Value BI Skills:
+  Tableau
+  Looker
+  Power BI
 
-Tier 2: High-Value BI Skills
+Tier 3: Analytics & Statistical Skills:
+  SAS
+  R
 
-Tableau
-Looker
-Power BI
+Tier 4: Cloud & Data Platform Skills:
+  BigQuery
+  GCP
+  Snowflake
+  Azure
+  AWS
 
-Tier 3: Analytics & Statistical Skills
-
-SAS
-R
-
-Tier 4: Cloud & Data Platform Skills
-
-BigQuery
-GCP
-Snowflake
-Azure
-AWS
-
-Tier 5: Collaboration & Workflow Tools
-
-Git
-Jira
-Confluence
+Tier 5: Collaboration & Workflow Tools:
+  Git
+  Jira
+  Confluence
 
 The strongest combination for landing a top-paying Business Analyst role in 2023 was typically: 
 SQL + Python + Excel + a BI tool (Tableau/Looker), 
@@ -93,7 +91,7 @@ SQL + Python + Excel + a BI tool (Tableau/Looker),
 
 
 ==========================================================================================================================================================
-___RESULTS FOR DATA ANALYST___
+___OUTPUT FOR DATA ANALYST___
 [
   {
     "job_id": 552322,
@@ -569,7 +567,7 @@ ________________________________________________________________________________
 
 
 
-___FOR BUSINESS ANALYST___
+___OUTPUT FOR BUSINESS ANALYST___
 [
   {
     "job_id": 502610,
