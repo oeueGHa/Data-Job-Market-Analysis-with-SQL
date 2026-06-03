@@ -3,6 +3,13 @@
   Exploring salaries, skill demand, and career trends in the data industry.
 </p>
 <p align="center">
+   English version
+  <br>
+  ⬇️
+  <br>
+   Русская версия ниже
+</p>
+<p align="center">
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnJ1MDFoMDF0dGZlM2g5b3A5d2Z0a3J2Z2VhMWN3b3N1M3I0d3VqYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0HlNaQ6gWfllcjDO/giphy.gif" width="700">
 </p>
 
