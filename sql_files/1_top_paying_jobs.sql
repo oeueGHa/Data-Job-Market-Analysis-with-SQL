@@ -1,9 +1,17 @@
 SELECT 
     job_id,
+    job_title,
+    job_location,
+    job_schedule_type,
+    company_dim.name company_name,
     --job_title_short,
-    job_work_from_home,
-    salary_year_avg
+    --job_work_from_home,
+    salary_year_avg,
+    job_posted_date
 FROM job_postings_fact
-where job_title_short IN ('Data Analyst')
-ORDER BY salary_hour_avg DESC
+LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
+where job_title_short = 'Data Analyst'
+    AND job_location = 'Anywhere'
+    AND salary_year_avg IS NOT NULL
+ORDER BY salary_year_avg DESC
 limit 10
