@@ -437,9 +437,9 @@ ___FOR SOFTWARE ENGINEER___
   depth, while distributed databases and cloud storage systems (Cassandra, DynamoDB, Neo4j) reflect strong demand for 
   scalable data architectures. At the same time, mainstream backend frameworks and enterprise tooling still command 
   strong salaries when they are embedded in core business systems rather than peripheral applications.
-
-
-
+||
+||
+||
 ===========================================================================================================================================
 
 ===========================================================================================================================================

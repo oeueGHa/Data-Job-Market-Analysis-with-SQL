@@ -236,9 +236,9 @@ ___FOR SOFTWARE ENGINEER___
 
   Multi-language backend ecosystems remain relevant: SQL and Java maintain strong demand, indicating that 
   traditional enterprise systems and database-driven architectures are still a core part of software engineering roles.
-
-
-
+||
+||
+||
 ===========================================================================================================================================
 
 ===========================================================================================================================================
