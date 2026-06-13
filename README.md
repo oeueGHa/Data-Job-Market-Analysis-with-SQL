@@ -57,8 +57,7 @@ I used the following query for highlighting the high paying opportunities in the
         job_posted_date
     FROM job_postings_fact
     LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
-    where job_title_short = 'Data Analyst' --write there the type of role
-        AND job_location = 'Anywhere'
+    where job_title_short = 'Data Analyst' --type of role
         AND salary_year_avg IS NOT NULL
     ORDER BY salary_year_avg DESC
     limit 10
@@ -314,7 +313,7 @@ The top paying job from all job types is <b>Data Scientist</b> with salary $960 
 
 <br><br>
 
-#### Overall Insights
+#### Top Paying Jobs Insights
 #### 📍 Geographic Distribution
 - Majority of top-paying roles are located in the United States<br>
 - Remote (“Anywhere”) roles make up a significant share of high salaries
@@ -339,8 +338,8 @@ I used the following query to analyze the skills associated with top paying jobs
           company_dim.name company_name
       FROM job_postings_fact
       LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
-      WHERE job_title_short = 'Software Engineer'
-          AND job_location = 'Anywhere'
+      WHERE job_title_short = 'Software Engineer' --type of role
+          AND job_location = 'Anywhere' --job location
           AND salary_year_avg IS NOT NULL
   )
 
@@ -380,10 +379,9 @@ I used the following query to analyze the skills associated with top paying jobs
   - Jira
   - Confluence
 
-  The strongest combination for landing a top-paying Business Analyst role in 2023 was typically: <br>
-    SQL + Python + Excel + a BI tool (Tableau/Looker)<br>
-
-      *cloud-platform experience providing an additional salary advantage.
+        The strongest combination for landing a top-paying Business Analyst role in 2023 was typically:
+          SQL + Python + Excel + a BI tool (Tableau/Looker)
+        *cloud-platform experience providing an additional salary advantage.
 ### 2.2 For Cloud Engineer
 #### Tier 1: Core High-Paying Engineering Skills:<br>
   - Python
@@ -420,8 +418,8 @@ I used the following query to analyze the skills associated with top paying jobs
   - Tableau
   - Looker
 
-The strongest combination for landing a top-paying engineering role in this dataset was typically:<br>
-Python + Go/C++ + Linux + Cloud (GCP/AWS/Azure) + Kubernetes + MongoDB
+        The strongest combination for landing a top-paying engineering role in this dataset was typically:
+        Python + Go/C++ + Linux + Cloud (GCP/AWS/Azure) + Kubernetes + MongoDB
 ### 2.3 For Data Analyst
 #### Tier 1 (Essential):<br>
   - SQL
@@ -443,23 +441,282 @@ Python + Go/C++ + Linux + Cloud (GCP/AWS/Azure) + Kubernetes + MongoDB
   - Confluence
 
 
-The dataset shows that the highest-paying Data Analyst roles in 2023 typically required a combination of:<br>
-SQL + Python + Visualization tools + Cloud/Data platform skills
+        The dataset shows that the highest-paying Data Analyst roles in 2023 typically required a combination of:<br>
+        SQL + Python + Visualization tools + Cloud/Data platform skills
 
-Candidates who added cloud technologies (AWS, Azure, Snowflake, Databricks) and modern data engineering workflows consistently achieved higher compensation levels.
+        Candidates who added cloud technologies (AWS, Azure, Snowflake, Databricks) and modern data engineering workflows consistently achieved higher compensation levels.
 
-SQL remains the universal baseline requirement, while Python is the strongest differentiator for progressing into senior and leadership-level analytics roles.
+        SQL remains the universal baseline requirement, while Python is the strongest differentiator for progressing into senior and leadership-level analytics roles.
 ### 2.4 For Senior Data Analyst
-### 2.5 For Data Engineer
-### 2.6 For Senior Data Engineer
-### 2.7 For Data Scientist
-### 2.8 For Senior Data Scientist
-### 2.9 For Machine Learning Engineer
-### 2.10 For Software Engineer
+#### Tier 1: Must-Have Analytics Skills:<br>
+  - SQL
+  - Python
 
+#### Tier 2: Statistical & Data Science Skills:<br>
+  - R
+  - Spark
+  - Jupyter
+  - Keras
+
+#### Tier 3: Cloud & Data Platform Skills:<br>
+  - AWS
+  - BigQuery
+
+#### Tier 4: BI & Reporting Skills:<br>
+  - Tableau
+
+#### Tier 5: Software Engineering & Development Skills:<br>
+  - FastAPI
+  - Flask
+  - Scala
+  - Golang
+  - Rust
+  - JavaScript
+  - HTML
+  - CSS
+  - Angular
+
+#### Tier 6: Collaboration & Business Tools:<br>
+  - Jira
+  - Zoom
+
+        The strongest combination for landing a top-paying Senior Data Analyst / Applied Scientist role in this dataset was typically:
+          SQL + Python + R + Cloud/Data Platform experience (AWS or BigQuery)
+### 2.5 For Data Engineer
+#### Tier 1:<br>
+  - Python
+  - SQL
+
+#### Tier 2:<br>
+  - Spark
+  - PySpark
+  - Hadoop
+  - Kafka
+
+#### Tier 3:<br>
+  - Pandas
+  - NumPy
+  - TensorFlow
+  - PyTorch
+  - Keras
+  - R
+
+#### Tier 4:<br>
+  - Kubernetes
+  - Azure
+
+#### Tier 5:<br>
+  - Scala
+
+        The strongest combination for landing a top-paying Data Engineer role in this dataset was typically:
+          Python + Spark + PySpark + Hadoop + Kafka + Kubernetes
+### 2.6 For Senior Data Engineer
+#### Tier 1: Top-Paying Job Skills ($240k–$236k):<br>
+  - MongoDB
+  - Python
+  - NoSQL
+  - Java
+  - Shell
+  - JavaScript
+  - Cassandra
+  - AWS
+  - Azure
+  - Spark
+  - Kafka
+
+#### Tier 2: High-Paying Job Skills ($225k):<br>
+  - Python
+  - MongoDB
+  - AWS
+  - Azure
+
+#### Tier 3: Senior Leadership Data Platform Skills ($220k):<br>
+  - SQL
+  - Python
+  - AWS
+  - Redshift
+  - Snowflake
+  - Airflow
+
+#### Tier 4: Collaboration & Engineering Management Skills ($220k):<br>
+  - GitHub
+  - Jira
+  - Confluence
+
+        The strongest combination for landing a top-paying Data Engineering role in this dataset was typically:
+          Python + MongoDB + AWS + Spark + Kafka
+### 2.7 For Data Scientist
+#### Tier 1 ($550k–$525k):<br>
+  - SQL
+  - Python
+
+#### Tier 2 ($375k):<br>
+  - SQL
+  - Python
+  - Java
+  - Cassandra
+  - Spark
+  - Hadoop
+  - Tableau
+
+#### Tier 3 ($320k):<br>
+  - AWS
+  - Azure
+  - TensorFlow
+  - Keras
+  - PyTorch
+  - Scikit-learn
+  - DataRobot
+
+#### Tier 4 ($300k):<br>
+  - Python
+  - SQL
+  - Scala
+  - Java
+  - Spark
+  - TensorFlow
+  - PyTorch
+  - Kubernetes
+  - AWS
+  - GCP
+  - Pandas
+  - NumPy
+
+        The strongest combination for landing a top-paying role in this dataset was typically:
+          SQL + Python + Spark + TensorFlow/PyTorch
+### 2.8 For Senior Data Scientist
+#### Tier 1 ($375k):<br>
+  - SQL
+  - Python
+  - Java
+  - C++
+  - Cassandra
+  - Spark
+  - Hadoop
+  - Tableau
+
+#### Tier 2 ($245k):<br>
+  - Python
+  - SQL
+  - R
+  - Scala
+  - Java
+  - C++
+  - Spark
+  - Airflow
+  - TensorFlow
+  - PyTorch
+
+#### Tier 3 ($235k):<br>
+  - Python
+  - R
+  - BigQuery
+  - TensorFlow
+  - PyTorch
+  - Scikit-learn
+  - Tableau
+  - Looker
+
+#### Tier 4 ($230k):<br>
+  - Snowflake
+  - SQL
+  - Python
+
+        The strongest combination for landing a top-paying Data Scientist role in this dataset was typically:
+          SQL + Python + Spark + C++/Java + Machine Learning Frameworks
+### 2.9 For Machine Learning Engineer
+#### Tier 1 ($325k):<br>
+  - SQL
+  - Python
+  - Airflow
+  - Spark
+  - Kubernetes
+  - GCP
+  - AWS
+  - Java
+  - Docker
+  - Ansible
+  - Chef
+  - Terraform
+  - Excel
+  - Scala
+
+#### Tier 2 ($300k):<br>
+  - TypeScript
+  - Python
+  - Golang
+
+#### Tier 3 ($262.5k):<br>
+  - Python
+  - Excel
+
+#### Tier 4 ($249k):<br>
+  - MongoDB
+  - Python
+
+#### Tier 5 ($240k):<br>
+  - TensorFlow
+  - PyTorch
+
+        The strongest combination for landing a top-paying Machine Learning Engineer role in this dataset was typically:
+          Python + Spark + Kubernetes + AWS/GCP + Docker + Airflow
+### 2.10 For Software Engineer
+#### Tier 1 ($225k):<br>
+  - Python
+  - JavaScript
+  - TypeScript
+  - AWS
+  - Azure
+  - Snowflake
+  - Spark
+  - React
+
+#### Tier 2 ($205k):<br>
+  - Python
+  - AWS
+  - GCP
+  - Elasticsearch
+  - DynamoDB
+  - Snowflake
+  - Pandas
+  - Airflow
+  - React
+  - GraphQL
+  - Node.js
+
+#### Tier 3 ($200k):<br>
+  - MongoDB
+  - TypeScript
+  - Ruby
+
+#### Tier 4 ($191k):<br>
+  - JavaScript
+  - CSS
+
+        The strongest combination for landing a top-paying Software Engineer role in this dataset was typically:
+          Python + AWS + React + Snowflake + Spark
+
+###  Top Paying Job Skills Insights
+<img src="images\01_06_22.png"><br>
+### <b>Key Insights</b><br>
+ 
+  - Python and SQL are the undisputed kings. They appear in almost 90% of all job postings across all roles. If you master these two, you unlock the majority of the market;
+  - MongoDB is Aggressively Hiring: MongoDB appears across almost every engineering category (Cloud, Data Engineering, Software Engineering, ML Platform);
+  - The "Excel" Anomaly in ML: In the Machine Learning Engineer dataset, the skill "excel" appears 3 times (for roles at Acceler8 Talent and Harnham). This is highly unusual for core ML roles (which require PyTorch/TensorFlow) and suggests a data scraping error in the original dataset or a very unusual job description requiring financial modeling alongside deep learning.
 
 
 ### 3. The Most Demanded Skills
+### 3.1 For Business Analyst
+
+### 3.2 For Cloud Engineer
+### 3.3 For Data Analyst
+### 3.4 For Senior Data Analyst
+### 3.5 For Data Engineer
+### 3.6 For Senior Data Engineer
+### 3.7 For Data Scientist
+### 3.8 For Senior Data Scientist
+### 3.9 For Machine Learning Engineer
+### 3.10 For Software Engineer
 ### 4. Top Skills (based on salary)
 ### 5. Most Optimal Skill To Learn
 
