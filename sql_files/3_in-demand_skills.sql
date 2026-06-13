@@ -4,7 +4,7 @@ with home_jobs as (
     where 
         job_work_from_home IS true and
         --job_title like '%Data%'
-        job_title_short = 'Software Engineer'
+        job_title_short = 'Data Analyst'
 )
 
 SELECT
@@ -65,24 +65,19 @@ ___CLOUD ENGINEER___
 
 ___FOR DATA ANALYST___
   Skill Ranking:
-  SQL (1,266)
-  Excel (983)
-  Tableau (728)
-  Power BI (555)
-  Python (546)
+  SQL (7,291)
+  Excel (4,611)
+  Python (4,330)
+  Tableau (3,745)
+  Power BI (2,609)
 
-  The ranking reveals three major themes:
+  The ranking shows three key themes:
 
-  Data querying remains the foundation: SQL dominates all other skills, highlighting its role as 
-  the primary language forextracting, transforming, and analyzing data across organizations.
+  SQL is the dominant baseline skill: With a significant lead over all other skills, SQL remains the most in-demand capability, confirming that data extraction and querying are at the center of almost every data-related role.
 
-  Business intelligence is highly valued: Tableau and Power BI both appear in the top five, 
-  demonstrating strong employer demand for professionals who can transform raw data into dashboards, reports, 
-  and actionable insights.
+  A strong analytics toolkit sits in the middle tier: Excel and Python are closely grouped after SQL, showing a balance between traditional business analysis (Excel) and more advanced, programmable data workflows (Python).
 
-  Technical and business skills must coexist: While Excel remains a core business tool, 
-  Python's presence shows that employers increasingly seek analysts who can complement traditional spreadsheet work with
-  automation, advanced analytics, and data processing capabilities.
+  Visualization tools are essential but secondary: Tableau and Power BI round out the list, indicating that while dashboarding and reporting are critical, they typically come after core data handling and analysis skills.
 
 
 

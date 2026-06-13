@@ -419,7 +419,7 @@ I used the following query to analyze the skills associated with top paying jobs
   - Looker
 
         The strongest combination for landing a top-paying engineering role in this dataset was typically:
-        Python + Go/C++ + Linux + Cloud (GCP/AWS/Azure) + Kubernetes + MongoDB
+          Python + Go/C++ + Linux + Cloud (GCP/AWS/Azure) + Kubernetes + MongoDB
 ### 2.3 For Data Analyst
 #### Tier 1 (Essential):<br>
   - SQL
@@ -442,11 +442,11 @@ I used the following query to analyze the skills associated with top paying jobs
 
 
         The dataset shows that the highest-paying Data Analyst roles in 2023 typically required a combination of:<br>
-        SQL + Python + Visualization tools + Cloud/Data platform skills
+          SQL + Python + Visualization tools + Cloud/Data platform skills
 
-        Candidates who added cloud technologies (AWS, Azure, Snowflake, Databricks) and modern data engineering workflows consistently achieved higher compensation levels.
+          Candidates who added cloud technologies (AWS, Azure, Snowflake, Databricks) and modern data engineering workflows consistently achieved higher compensation levels.
 
-        SQL remains the universal baseline requirement, while Python is the strongest differentiator for progressing into senior and leadership-level analytics roles.
+          SQL remains the universal baseline requirement, while Python is the strongest differentiator for progressing into senior and leadership-level analytics roles.
 ### 2.4 For Senior Data Analyst
 #### Tier 1: Must-Have Analytics Skills:<br>
   - SQL
@@ -707,16 +707,176 @@ I used the following query to analyze the skills associated with top paying jobs
 
 ### 3. The Most Demanded Skills
 ### 3.1 For Business Analyst
+#### Skill Ranking:
+  - SQL (1,266)
+  - Excel (983)
+  - Tableau (728)
+  - Power BI (555)
+  - Python (546)
 
+        Data querying remains the foundation: SQL dominates all other skills, highlighting its role as the primary 
+        language for extracting, transforming, and analyzing data across organizations.
+
+        Business intelligence is highly valued: Tableau and Power BI both appear in the top five, 
+        demonstrating strong employer demand for professionals who can transform raw data into dashboards, reports, and actionable insights.
+
+        Technical and business skills must coexist: While Excel remains a core business tool, 
+        Python's presence shows that employers increasingly seek analysts who can complement 
+        traditional spreadsheet work with automation, advanced analytics, and data processing capabilities.
 ### 3.2 For Cloud Engineer
+#### Skill Ranking:
+  - Python (203)
+  - AWS (190)
+  - SQL (163)
+  - Azure (130)
+  - Kubernetes (94)
+
+        - Automation first: Python leads all skills, indicating that scripting and automation are fundamental to cloud engineering.
+        - Cloud platform expertise is essential: AWS and Azure occupy two of the top four positions, showing that cloud providers remain the backbone of the profession.
+        - Cloud-native operations are growing: Kubernetes' strong showing reflects increasing demand for container orchestration and scalable application management.
+
+        Overall, the ideal Cloud Engineer profile combines Python for automation, AWS/Azure for infrastructure management, 
+        SQL for data interaction, and Kubernetes for cloud-native deployment and orchestration. 
+        This combination aligns closely with the skills most frequently requested by employers.
 ### 3.3 For Data Analyst
+#### Skill Ranking:
+  - SQL (7,291)
+  - Excel (4,611)
+  - Python (4,330)
+  - Tableau (3,745)
+  - Power BI (2,609)
+
+        SQL is the dominant baseline skill: With a significant lead over all other skills, SQL remains the most in-demand capability, confirming that data extraction and querying are at the center of almost every data-related role.
+
+        A strong analytics toolkit sits in the middle tier: Excel and Python are closely grouped after SQL, 
+        showing a balance between traditional business analysis (Excel) and more advanced, programmable data workflows (Python).
+
+        Visualization tools are essential but secondary: Tableau and Power BI round out the list, indicating that while dashboarding and reporting are critical, they typically come after core data handling and analysis skills.
 ### 3.4 For Senior Data Analyst
+#### Skill Ranking:
+  - SQL (1,724)
+  - Python (1,054)
+  - Tableau (999)
+  - Excel (700)
+  - R (514)
+
+        Data manipulation is the core competency: SQL leads by a significant margin, emphasizing that the ability to access, 
+        clean, and manage data remains fundamental across analytical roles.
+
+        Programming skills are increasingly important: Python and R both rank in the top five, indicating strong demand for 
+        professionals who can perform statistical analysis, automate workflows, and handle complex data tasks beyond traditional business intelligence tools.
+
+        Data storytelling drives business value: Tableau’s prominent position highlights the importance of transforming 
+        analytical findings into clear visualizations that support decision-making and communicate insights effectively.
 ### 3.5 For Data Engineer
+#### Skill Ranking:
+  - SQL (14,213)
+  - Python (13,893)
+  - AWS (8,570)
+  - Azure (6,997)
+  - Spark (6,612)
+
+        Data engineering is built on data processing fundamentals: SQL and Python lead the ranking by a wide margin, 
+        showing that efficient data manipulation, transformation, and automation are at the heart of modern data engineering workflows.
+
+        Cloud expertise has become a standard requirement: AWS and Azure occupy two of the top five positions, reflecting 
+        the industry's shift toward cloud-based data platforms, storage solutions, and scalable infrastructure.
+
+        Big data technologies remain critical: Spark's strong presence demonstrates the continued importance of distributed data
+        processing and large-scale analytics as organizations handle ever-growing volumes of data.
 ### 3.6 For Senior Data Engineer
+#### Skill Ranking:
+  - Python (4,604)
+  - SQL (4,488)
+  - AWS (3,367)
+  - Spark (2,423)
+  - Azure (2,240)
+
+        Programming is now the leading entry point: Python slightly surpasses SQL, showing that modern data roles increasingly 
+        prioritize scripting, automation, and end-to-end workflow development over pure querying tasks.
+
+        Core data infrastructure skills remain tightly clustered: SQL, AWS, and Azure all sit close together in demand, 
+        indicating that employers expect candidates to be comfortable working across both relational databases and cloud 
+        environments without sharp specialization gaps.
+
+        Distributed processing is a key differentiator: Spark’s presence in the top five confirms that large-scale data 
+        handling and distributed computing capabilities are still important for more advanced or production-level data roles.
 ### 3.7 For Data Scientist
+#### Skill Ranking:
+  - Python (10,390)
+  - SQL (7,488)
+  - R (4,674)
+  - AWS (2,593)
+  - Tableau (2,458)
+
+        Programming dominates modern analytics workflows: Python clearly leads the ranking, showing that employers prioritize 
+        flexible, general-purpose programming for automation, data processing, and advanced analysis. R’s strong position 
+        reinforces the continued relevance of statistical programming in analytical roles.
+
+        Data querying remains a non-negotiable foundation: SQL holds second place, confirming that structured data access and 
+        database querying are still core requirements across nearly all data-related positions.
+
+        Cloud and visualization complete the stack: AWS and Tableau round out the top five, highlighting the importance of 
+        scalable cloud infrastructure and the ability to communicate insights visually through dashboards.
 ### 3.8 For Senior Data Scientist
+#### Skill Ranking:
+  - Python (2,956)
+  - SQL (2,185)
+  - R (1,307)
+  - AWS (866)
+  - Spark (693)
+
+        Programming is the dominant entry requirement: Python leads the list, showing that employers increasingly expect 
+        candidates to be comfortable with coding for data analysis, automation, and workflow building rather than relying only 
+        on manual tools.
+
+        Structured data skills remain essential: SQL holds second place, confirming that database querying and data extraction 
+        remain foundational skills across virtually all data-focused roles.
+
+        Advanced analytics and scalable systems are still relevant but secondary: R maintains a strong position for statistical
+        analysis, while AWS and Spark show continued demand for cloud-based infrastructure and distributed data processing, 
+        especially in more advanced or production-oriented environments.
 ### 3.9 For Machine Learning Engineer
+#### Skill Ranking:
+  - Python (1,230)
+  - PyTorch (571)
+  - TensorFlow (553)
+  - AWS (548)
+  - SQL (398)
+
+        Python is the foundation of modern AI workflows: Python clearly leads, reflecting its role as the primary language for 
+        machine learning development, model training, and experimentation across the AI ecosystem.
+
+        Deep learning frameworks are central to demand: PyTorch and TensorFlow appear almost equally important, showing that 
+        employers expect familiarity with at least one major deep learning framework for building and deploying neural network models.
+
+        AI engineering extends beyond modeling into infrastructure: AWS and SQL highlight that production-ready machine 
+        learning is not just about models, but also about working with cloud infrastructure and handling structured data pipelines.
 ### 3.10 For Software Engineer
+#### Skill Ranking:
+  - Python (1,318)
+  - SQL (1,038)
+  - AWS (1,007)
+  - Java (741)
+  - Kubernetes (618)
+
+        Python leads modern backend and data-driven development: Python holds the top position, reflecting its 
+        versatility across automation, backend services, data pipelines, and cloud-native applications.
+
+        Cloud infrastructure is as important as coding: AWS and Kubernetes both appear strongly in the top five, 
+        showing that employers increasingly expect developers to work within containerized, scalable cloud environments 
+        rather than standalone systems.
+
+        Multi-language backend ecosystems remain relevant: SQL and Java maintain strong demand, indicating that 
+        traditional enterprise systems and database-driven architectures are still a core part of software engineering roles.
+
+### The Most Demanded Skills Insights
+### <b>Key Insights</b>
+- The "Big Two" Monopoly: SQL and Python aren't just popular; they are the absolute foundation of the tech economy. Data Engineering alone demands over 28,000 combined mentions for these two;
+- The Seniority "Tool Drop": There is a ruthless shift as you level up. In junior/mid-level Analyst roles, BI tools like Excel, Tableau, and Power BI dominate the top 5. But in Senior Data roles, they completely vanish, replaced by heavy-hitters like Python, R, and Spark. The market is screaming: juniors build dashboards, seniors build architectures;
+- PyTorch Takes the ML Crown: In the Machine Learning Engineer category, PyTorch (571 jobs) has officially edged out TensorFlow (553 jobs);
+AWS is the Undisputed Cloud King: Across Cloud, Data, ML, and Software Engineering, AWS consistently crushes Azure in job volume. It is the default cloud standard.
+
 ### 4. Top Skills (based on salary)
 ### 5. Most Optimal Skill To Learn
 
