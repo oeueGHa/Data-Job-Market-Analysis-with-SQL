@@ -309,14 +309,14 @@ For Business Analyst roles, the following jobs were identified:
 </p>
 The most amount of top paying jobs is located in  <b>USA</b>
 
-<br><br>
+<br>
 
 <p align="center">
 <img src="images\1781381203.png">
 </p>
 The top paying job from all job types is <b>Data Scientist</b> with salary $960 000
 
-<br>
+<br><br>
 
 #### Overall Insights
 #### 📍 Geographic Distribution
