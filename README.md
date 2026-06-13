@@ -45,23 +45,23 @@ By answering these questions, the project provides valuable insights for anyone 
 ---
 ## 📈 Analysis
 ### 1. Top Paying Jobs
-To extract the required data for this analysis, I used the following query:
+I used the following query for highlighting the high paying opportunities in the field:
 ```sql
-SELECT 
-    job_id,
-    job_title,
-    job_location,
-    job_schedule_type,
-    company_dim.name company_name,
-    salary_year_avg,
-    job_posted_date
-FROM job_postings_fact
-LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
-where job_title_short = 'Data Analyst'
-    AND job_location = 'Anywhere'
-    AND salary_year_avg IS NOT NULL
-ORDER BY salary_year_avg DESC
-limit 10
+    SELECT 
+        job_id,
+        job_title,
+        job_location,
+        job_schedule_type,
+        company_dim.name company_name,
+        salary_year_avg,
+        job_posted_date
+    FROM job_postings_fact
+    LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
+    where job_title_short = 'Data Analyst' --write there the type of role
+        AND job_location = 'Anywhere'
+        AND salary_year_avg IS NOT NULL
+    ORDER BY salary_year_avg DESC
+    limit 10
 ```
 ### 1.1  Top Paying Jobs: Business Analyst
 For Business Analyst roles, the following jobs were identified:
@@ -304,16 +304,12 @@ For Business Analyst roles, the following jobs were identified:
 - All jobs have "Full-time" schedule type
 
 ### 1.11 Results
-<p align="center">
-<img src="images\top_jobs_dist.png">
-</p>
+<img src="images\top_jobs_dist.png"><br>
 The most amount of top paying jobs is located in  <b>USA</b>
 
 <br>
 
-<p align="center">
-<img src="images\1781381203.png">
-</p>
+<img src="images\1781381203.png"><br>
 The top paying job from all job types is <b>Data Scientist</b> with salary $960 000
 
 <br><br>
@@ -330,7 +326,142 @@ The top paying job from all job types is <b>Data Scientist</b> with salary $960 
 Top-paying companies include:
 - Big Tech: Meta, Google, Netflix, TikTok<br>
 - Financial institutions and hedge funds<br>
-- AI-focused startups and research organizations
+- AI-focused startups and research organizations<br><br><br>
+
+### 2. Top Paying Job Skills
+I used the following query to analyze the skills associated with top paying jobs:
+```sql
+  WITH top_paying_jobs AS(
+      SELECT 
+          job_postings_fact.job_id,
+          job_title,
+          salary_year_avg,
+          company_dim.name company_name
+      FROM job_postings_fact
+      LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
+      WHERE job_title_short = 'Software Engineer'
+          AND job_location = 'Anywhere'
+          AND salary_year_avg IS NOT NULL
+  )
+
+  SELECT
+      top_paying_jobs.*,
+      skills
+  FROM top_paying_jobs
+  INNER JOIN skills_job_dim ON skills_job_dim.job_id = top_paying_jobs.job_id
+  INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+  ORDER BY salary_year_avg DESC
+  LIMIT 30
+```
+### 2.1 For Business Analyst
+#### Tier 1: Must-Have Skills:<br>
+  - SQL
+  - Python
+  - Excel
+
+  #### Tier 2: High-Value BI Skills:<br>
+  - Tableau
+  - Looker
+  - Power BI
+
+  #### Tier 3: Analytics & Statistical Skills:<br>
+  - SAS
+  - R
+
+  #### Tier 4: Cloud & Data Platform Skills:<br>
+  - BigQuery
+  - GCP
+  - Snowflake
+  - Azure
+  - AWS
+
+  #### Tier 5: Collaboration & Workflow Tools:<br>
+  - Git
+  - Jira
+  - Confluence
+
+  The strongest combination for landing a top-paying Business Analyst role in 2023 was typically: <br>
+    SQL + Python + Excel + a BI tool (Tableau/Looker)<br>
+
+      *cloud-platform experience providing an additional salary advantage.
+### 2.2 For Cloud Engineer
+#### Tier 1: Core High-Paying Engineering Skills:<br>
+  - Python
+  - Go
+  - C++
+  - Java
+
+#### Tier 2: Infrastructure & Systems Skills:<br>
+  - Linux
+  - Kubernetes
+  - Docker
+  - Splunk
+
+#### Tier 3: Cloud Platform Skills:<br>
+  - GCP
+  - AWS
+  - Azure
+
+#### Tier 4: Database & Data Platform Skills:<br>
+  - MongoDB
+  - SQL
+  - Kafka
+  - Elasticsearch
+
+#### Tier 5: Data Engineering Skills:<br>
+  - Spark
+  - PySpark
+  - Airflow
+  - Snowflake
+  - BigQuery
+  - Redshift
+
+#### Tier 6: Analytics & Visualization Skills:<br>
+  - Tableau
+  - Looker
+
+The strongest combination for landing a top-paying engineering role in this dataset was typically:<br>
+Python + Go/C++ + Linux + Cloud (GCP/AWS/Azure) + Kubernetes + MongoDB
+### 2.3 For Data Analyst
+#### Tier 1 (Essential):<br>
+  - SQL
+  - Python
+  - Tableau or Power BI
+  - Excel
+
+#### Tier 2 (High Salary Boost):<br>
+  - Snowflake
+  - AWS
+  - Azure
+  - Pandas
+
+#### Tier 3 (Senior-Level Differentiators):<br>
+  - Databricks
+  - PySpark
+  - Git/GitLab
+  - Jira
+  - Confluence
+
+
+The dataset shows that the highest-paying Data Analyst roles in 2023 typically required a combination of:<br>
+SQL + Python + Visualization tools + Cloud/Data platform skills
+
+Candidates who added cloud technologies (AWS, Azure, Snowflake, Databricks) and modern data engineering workflows consistently achieved higher compensation levels.
+
+SQL remains the universal baseline requirement, while Python is the strongest differentiator for progressing into senior and leadership-level analytics roles.
+### 2.4 For Senior Data Analyst
+### 2.5 For Data Engineer
+### 2.6 For Senior Data Engineer
+### 2.7 For Data Scientist
+### 2.8 For Senior Data Scientist
+### 2.9 For Machine Learning Engineer
+### 2.10 For Software Engineer
+
+
+
+### 3. The Most Demanded Skills
+### 4. Top Skills (based on salary)
+### 5. Most Optimal Skill To Learn
 
 
 <br><br><br><br><br><br>
