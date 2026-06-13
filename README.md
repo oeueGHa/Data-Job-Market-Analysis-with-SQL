@@ -7,7 +7,8 @@
   <br>
   ⬇️
   <br>
-   Русская версия ниже
+   <a href="#russian-version">Русская версия ↓</a>
+</h1>
 </p>
 <p align="center">
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnJ1MDFoMDF0dGZlM2g5b3A5d2Z0a3J2Z2VhMWN3b3N1M3I0d3VqYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0HlNaQ6gWfllcjDO/giphy.gif" width="700">
@@ -62,7 +63,9 @@ where job_title_short = 'Data Analyst'
 ORDER BY salary_year_avg DESC
 limit 10
 ```
-### 1.1  Top Paying Jobs: usiness Analyst
+### 1.1  Top Paying Jobs: Business Analyst
+For Business Analyst roles, the following jobs were identified:
+<br>
 | # | Job Title | Location | Schedule | Company | Avg Annual Salary | Posted Date |
 |---|---|---|---|---|---:|---|
 | 1 | Principal Economist / Scientist | San Mateo, CA | Full-time | Roblox | 387,460 | 2023-08-23 08:03:55 |
@@ -75,7 +78,18 @@ limit 10
 | 8 | Senior Economy Designer | Anywhere | Full-time | Harnham | 190,000 | 2023-06-21 18:11:35 |
 | 9 | Business Intelligence Engineer, Sponsored TV | Madrid, Spain | Full-time | Amazon | 185,000 | 2023-12-12 16:40:37 |
 | 10 | Business Intelligence Analyst Lead | Charlotte, NC | Full-time | USAA | 175,000 | 2023-02-05 12:27:05 |
-### 1.2  Top Paying Jobs: loud Engineer
+
+<br>
+<b>Key Insights</b><br>
+
+- The top paying job is <span style="color:gold;">"Principal Economist / Scientist"</span> with salary $387 460<br>
+- <b>One half</b> jobs from <span style="color:green;">Anywhere</span>, 
+<b>other half:</b> jobs from <span style="color:green;">USA</span><br>
+- All jobs have "Full-time" schedule type
+
+<br>
+
+### 1.2  Top Paying Jobs: Cloud Engineer
 | # | Job Title | Location | Schedule | Company | Avg Annual Salary | Posted Date |
 |---|---|---|---|---|---:|---|
 | 1 | ETL разработчиĸ | Russia | Full-time | Технологическая компания | 280,000 | 2023-11-24 07:19:48 |
@@ -88,7 +102,18 @@ limit 10
 | 8 | Enterprise Customer Engineering Manager, Data Analytics, Google Cloud | Atlanta, GA | Full-time | Google | 195,000 | 2023-07-12 12:47:31 |
 | 9 | Cloud Operations Engineer (3rd Shift, FedRamp) | Anywhere | Full-time | MongoDB | 182,500 | 2023-09-29 19:31:01 |
 | 10 | Senior Mobile Engineer | Anywhere | Full-time | Rune Labs | 180,000 | 2023-04-19 20:17:22 |
-### 1.3  Top Paying Jobs: ata Analyst
+
+<br>
+<b>Key Insights</b><br>
+
+- The top paying job is <span style="color:gold;">"Tech Lead, Cloud Data Engine"</span> with salary $221,844<br>
+- <b>One half</b> jobs from <span style="color:green;">Anywhere / Remote</span>,
+<b>other half:</b> jobs from <span style="color:green;">USA + Europe + Russia</span><br>
+- All jobs have "Full-time" schedule type
+
+<br>
+
+### 1.3  Top Paying Jobs: Data Analyst
 | # | Job Title | Location | Schedule | Company | Avg Annual Salary | Posted Date |
 |---|---|---|---|---|---:|---|
 | 1 | Data Analyst | Anywhere | Full-time | Mantys | 650,000 | 2023-02-20 15:13:33 |
@@ -101,7 +126,18 @@ limit 10
 | 8 | Head of Data Analytics | Austin, TX | Full-time | Care.com | 350,000 | 2023-10-23 05:01:05 |
 | 9 | Director of Analytics | Anywhere | Full-time | Meta | 336,500 | 2023-08-23 12:04:42 |
 | 10 | Research Scientist | San Francisco, CA | Full-time | OpenAI | 285,000 | 2023-04-19 18:04:21 |
-### 1.4  Top Paying Jobs: enior Data Analyst
+
+<br>
+<b>Key Insights</b><br>
+
+- The top paying job is <span style="color:gold;">"Data Analyst"</span> with salary $650,000<br>
+- <b>One half</b> jobs from <span style="color:green;">USA</span>, 
+<b>other half:</b> jobs from <span style="color:green;">international / mixed (remote, Belarus, global)</span><br>
+- All jobs have "Full-time" schedule type
+
+<br>
+
+### 1.4  Top Paying Jobs: Senior Data Analyst
 | # | Job Title | Location | Schedule | Company | Avg Annual Salary | Posted Date |
 |---|---|---|---|---|---:|---|
 | 1 | SVP, Data Analytics | Santa Monica, CA | Full-time | The Walt Disney Company | 425,000 | 2023-06-22 09:01:01 |
@@ -114,7 +150,18 @@ limit 10
 | 8 | Senior Data Analyst | New York, NY | Full-time | GradBay | 240,000 | 2023-12-18 17:59:56 |
 | 9 | Data Analytics – Senior Manager | Jersey City, NJ | Full-time | Citi | 235,040 | 2023-08-04 18:00:06 |
 | 10 | Senior Data Analyst, Autonomous Vehicle Infrastructure | Santa Clara, CA | Full-time | NVIDIA | 228,000 | 2023-11-16 20:00:43 |
-### 1.5  Top Paying Jobs: ata Engineer
+
+<br>
+<b>Key Insights</b><br>
+
+- The top paying job is <span style="color:gold;">"SVP, Data Analytics"</span> with salary $425,000<br>
+- <b>One half</b> jobs from <span style="color:green;">USA</span>, 
+<b>other half:</b> jobs from <span style="color:green;">USA (multiple states / distributed)</span><br>
+- All jobs have "Full-time" schedule type
+
+<br>
+
+### 1.5  Top Paying Jobs: Data Engineer
 | # | Job Title | Location | Schedule | Company | Avg Annual Salary | Posted Date |
 |---|---|---|---|---|---:|---|
 | 1 | Hybrid - Data Engineer - Up to $600k | New York, NY | Full-time | Durlston Partners | 525,000 | 2023-04-05 16:08:42 |
@@ -127,7 +174,18 @@ limit 10
 | 8 | Data Engineer | Fort Belvoir, VA | Full-time | Chenega Corporation | 375,000 | 2023-04-25 10:07:14 |
 | 9 | VP, Data Engineer Epoch | New York, NY | Full-time | TD Bank | 375,000 | 2023-02-16 07:09:00 |
 | 10 | Data Engineer | N/A | Full-time | Algo Capital Group | 375,000 | 2023-09-19 09:42:31 |
-### 1.6  Top Paying Jobs: enior Data Engineer
+
+<br>
+<b>Key Insights</b><br>
+
+- The top paying job is <span style="color:gold;">"Hybrid - Data Engineer - Up to $600k"</span> with salary $525,000<br>
+- <b>One half</b> jobs from <span style="color:green;">New York / USA</span>, 
+<b>other half:</b> jobs from <span style="color:green;">USA + remote (N/A)</span><br>
+- All jobs have "Full-time" schedule type
+
+<br>
+
+### 1.6  Top Paying Jobs: Senior Data Engineer
 | # | Job Title | Location | Schedule | Company | Avg Annual Salary | Posted Date |
 |---|---|---|---|---|---:|---|
 | 1 | Senior Data Engineer, Security Master | N/A | Full-time | Winston Fox | 425,000 | 2023-05-26 10:41:16 |
@@ -140,7 +198,18 @@ limit 10
 | 8 | Sr. Data Engineer - Python | N/A | Full-time | Elite Hedge Fund | 300,000 | 2023-01-31 18:07:12 |
 | 9 | Senior Quantitative Data Engineer - HFT | N/A | Full-time | Capital Markets Recruitment | 300,000 | 2023-10-19 15:31:07 |
 | 10 | Senior Staff Engineer – Global Operation Data Science (GODS) | Mountain View, CA | Full-time | Coupang | 274,500 | 2023-01-09 22:04:14 |
-### 1.7  Top Paying Jobs: ata Scientist
+
+<br>
+<b>Key Insights</b><br>
+
+- The top paying job is <span style="color:gold;">"Senior Data Engineer, Security Master"</span> with salary $425,000<br>
+- <b>One half</b> jobs from <span style="color:green;">USA</span>, 
+<b>other half:</b> jobs from <span style="color:green;">remote (United States / N/A)</span><br>
+- All jobs have "Full-time" schedule type
+
+<br>
+
+### 1.7  Top Paying Jobs: Data Scientist
 | # | Job Title | Location | Schedule | Company | Avg Annual Salary | Posted Date |
 |---|---|---|---|---|---:|---|
 | 1 | Data Scientist | Madison, SD | Full-time | East River Electric Power Cooperative, Inc. | 960,000 | 2023-05-04 19:06:06 |
@@ -153,7 +222,18 @@ limit 10
 | 8 | Data Science Director – Audit | Charlotte, NC | Full-time | Truist Financial | 375,000 | 2023-04-11 06:24:58 |
 | 9 | Director, Data Science & Advanced Analytics | Austin, TX | Full-time | YETI Coolers | 375,000 | 2023-08-10 09:08:54 |
 | 10 | Director of Data Science (Hybrid) | Dodgeville, WI | Full-time | Lands End | 375,000 | 2023-03-03 13:04:58 |
-### 1.8  Top Paying Jobs: enior Data Scientist
+
+<br>
+<b>Key Insights</b><br>
+
+- The top paying job is <span style="color:gold;">"Data Scientist"</span> with salary $960,000<br>
+- <b>One half</b> jobs from <span style="color:green;">USA</span>, 
+<b>other half:</b> jobs from <span style="color:green;">global (USA + South Africa + remote)</span><br>
+- All jobs have "Full-time" schedule type
+
+<br>
+
+### 1.8  Top Paying Jobs: Senior Data Scientist
 | # | Job Title | Location | Schedule | Company | Avg Annual Salary | Posted Date |
 |---|---|---|---|---|---:|---|
 | 1 | Senior Data Scientist | Pretoria, South Africa | Full-time | MSP Staffing LTD | 890,000 | 2023-11-02 10:31:43 |
@@ -166,7 +246,18 @@ limit 10
 | 8 | Senior Data Scientist | Anywhere | Full-time | Algo Capital Group | 375,000 | 2023-08-30 10:06:34 |
 | 9 | Senior Data Scientist | N/A | Full-time | Algo Capital Group | 375,000 | 2023-10-17 10:02:23 |
 | 10 | Sr. Manager, Data Science | San Jose, CA | Full-time | eBay | 375,000 | 2023-03-05 07:03:34 |
-### 1.9  Top Paying Jobs: achine Learning Engineer
+
+<br>
+<b>Key Insights</b><br>
+
+- The top paying job is <span style="color:gold;">"Senior Data Scientist"</span> with salary $890,000<br>
+- <b>One half</b> jobs from <span style="color:green;">USA</span>, 
+<b>other half:</b> jobs from <span style="color:green;">global / mixed (South Africa, remote, USA)</span><br>
+- All jobs have "Full-time" schedule type
+
+<br>
+
+### 1.9  Top Paying Jobs: Machine Learning Engineer
 | # | Job Title | Location | Schedule | Company | Avg Annual Salary | Posted Date |
 |---|---|---|---|---|---:|---|
 | 1 | Principal Machine Learning Engineer | Anywhere | Full-time | Storm5 | 325,000 | 2023-11-24 14:25:28 |
@@ -179,6 +270,17 @@ limit 10
 | 8 | AI Architect | Pune, Maharashtra, India | Full-time | Bosch Group | 267,000 | 2023-11-21 21:12:09 |
 | 9 | Principal Machine Learning Research Scientist (Deep Learning) | Anywhere | Full-time | Acceler8 Talent | 262,500 | 2023-03-01 20:28:07 |
 | 10 | Machine Learning Researcher | Anywhere | Full-time | Acceler8 Talent | 262,500 | 2023-03-13 14:28:34 |
+
+<br>
+<b>Key Insights</b><br>
+
+- The top paying job is <span style="color:gold;">"Principal Machine Learning Engineer"</span> with salary $325,000<br>
+- <b>One half</b> jobs from <span style="color:green;">Anywhere / Remote</span>, 
+<b>other half:</b> jobs from <span style="color:green;">USA (mostly California hubs)</span><br>
+- All jobs have "Full-time" schedule type
+
+<br>
+
 ### 1.10 Top Paying Jobs: Software Engineer
 | # | Job Title | Location | Schedule | Company | Avg Annual Salary | Posted Date |
 |---|---|---|---|---|---:|---|
@@ -193,8 +295,46 @@ limit 10
 | 9 | Senior Software Engineer | Sydney NSW, Australia | Full-time | ROKT | 245,000 | 2023-09-29 18:23:27 |
 | 10 | Principal Big Data Software Engineer | California | Full-time | Trulia | 240,000 | 2023-03-12 06:45:03 |
 
-<br><br><br><br><br><br>
+<br>
+<b>Key Insights</b><br>
 
+- The top paying job is <span style="color:gold;">"Sr Staff Data Engineer - Software Engineering"</span> with salary $375,000<br>
+- <b>One half</b> jobs from <span style="color:green;">USA</span>, 
+<b>other half:</b> jobs from <span style="color:green;">global (Russia, Australia, USA, etc.)</span><br>
+- All jobs have "Full-time" schedule type
+
+### 1.11 Results
+<p align="center">
+<img src="images\top_jobs_dist.png">
+</p>
+The most amount of top paying jobs is located in  <b>USA</b>
+
+<br><br>
+
+<p align="center">
+<img src="images\1781381203.png">
+</p>
+The top paying job from all job types is <b>Data Scientist</b> with salary $960 000
+
+<br>
+
+#### Overall Insights
+#### 📍 Geographic Distribution
+- Majority of top-paying roles are located in the United States<br>
+- Remote (“Anywhere”) roles make up a significant share of high salaries
+#### 💰 Salary Trends
+- Data Scientist and Data Engineer roles show the highest earning potential<br>
+- Outliers heavily affect average salary distributions<br>
+- Role specialization matters more than job title alone
+#### 🏢 Company Influence
+Top-paying companies include:
+- Big Tech: Meta, Google, Netflix, TikTok<br>
+- Financial institutions and hedge funds<br>
+- AI-focused startups and research organizations
+
+
+<br><br><br><br><br><br>
+<a id="russian-version"></a>
 <h1 align="center">📊 Анализ рынка вакансий в сфере данных с помощью SQL</h1>
 
 <p align="center">
