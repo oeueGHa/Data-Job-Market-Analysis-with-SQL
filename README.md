@@ -41,8 +41,6 @@ The project demonstrates how SQL can be used to transform raw data into meaningf
 <a id="BG"></a>
 ## 🎯 Background
 
-This project was created as part of my journey to learn the fundamentals of SQL and data analysis through hands-on practice.
-
 The goal of this project was to analyze the data job market in order to identify which roles and technical skills are most in demand and associated with higher salaries. 
 
 This analysis helps translate raw job postings into actionable insights for career decision-making in the data field.
@@ -1560,8 +1558,6 @@ Overall, the data shows a clear career signal: early success comes from BI and a
 ---
 <a id="BGRU"></a>
 ## 🎯 Предыстория
-
-Этот проект был создан в рамках изучения основ SQL и анализа данных на практике.
 
 Цель этого проекта — проанализировать рынок вакансий в сфере данных, чтобы определить, какие роли и технические навыки пользуются наибольшим спросом и связаны с более высокими зарплатами. 
 
