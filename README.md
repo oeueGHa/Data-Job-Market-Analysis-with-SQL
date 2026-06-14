@@ -1521,7 +1521,7 @@ Overall, the data shows a clear career signal: early success comes from BI and a
 <h1 align="center">📊 Анализ рынка вакансий в сфере данных с помощью SQL</h1>
 
 <p align="center">
-  Исследование зарплат, востребованных навыков и карьерных трендов в сфере Data Analytics.
+  Исследование зарплат, востребованных навыков и карьерных трендов в сфере работы с данными.
 </p>
 <p align="center">
    <a href="#eng_ver">English version ↑</a>
