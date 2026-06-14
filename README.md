@@ -1,3 +1,4 @@
+<a id="eng_ver"></a>
 <h1 align="center">📊 Data Job Market Analysis with SQL</h1>
 <p align="center">
   Exploring salaries, skill demand, and career trends in the data industry.
@@ -1522,7 +1523,14 @@ Overall, the data shows a clear career signal: early success comes from BI and a
 <p align="center">
   Исследование зарплат, востребованных навыков и карьерных трендов в сфере Data Analytics.
 </p>
-
+<p align="center">
+   <a href="#eng_ver">English version ↑</a>
+  <br>
+  ⬆️
+  <br>
+   Русская версия
+</h1>
+</p>
 <p align="center">
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnJ1MDFoMDF0dGZlM2g5b3A5d2Z0a3J2Z2VhMWN3b3N1M3I0d3VqYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0HlNaQ6gWfllcjDO/giphy.gif" width="700">
 </p>
