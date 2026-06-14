@@ -696,16 +696,37 @@ I used the following query to analyze the skills associated with top paying jobs
         The strongest combination for landing a top-paying Software Engineer role in this dataset was typically:
           Python + AWS + React + Snowflake + Spark
 
-###  Top Paying Job Skills Insights
+### 2.11 Top Paying Job Skills Insights
 <img src="images\01_06_22.png"><br>
-### <b>Key Insights</b><br>
+### <b>🔑 Key Insights</b><br>
  
   - Python and SQL are the undisputed kings. They appear in almost 90% of all job postings across all roles. If you master these two, you unlock the majority of the market;
   - MongoDB is Aggressively Hiring: MongoDB appears across almost every engineering category (Cloud, Data Engineering, Software Engineering, ML Platform);
-  - The "Excel" Anomaly in ML: In the Machine Learning Engineer dataset, the skill "excel" appears 3 times (for roles at Acceler8 Talent and Harnham). This is highly unusual for core ML roles (which require PyTorch/TensorFlow) and suggests a data scraping error in the original dataset or a very unusual job description requiring financial modeling alongside deep learning.
+  - The "Excel" Anomaly in ML: In the Machine Learning Engineer dataset, the skill "excel" appears 3 times (for roles at Acceler8 Talent and Harnham). This is highly unusual for core ML roles (which require PyTorch/TensorFlow) and suggests a data scraping error in the original dataset or a very unusual job description requiring financial modeling alongside deep learning.<br><br><br>
 
 
 ### 3. The Most Demanded Skills
+I used the following query to analyze the most demanded skills:
+```sql
+    with home_jobs as (
+        select job_id
+        from job_postings_fact
+        where 
+            job_work_from_home IS true and
+            job_title_short = 'Data Analyst' --type of role
+    )
+
+    SELECT
+        skills_job_dim.skill_id,
+        skills_dim.skills, 
+        count(home_jobs.job_id) job_amount_per_skill
+    FROM skills_job_dim
+    INNER JOIN skills_dim ON skills_dim.skill_id = skills_job_dim.skill_id
+    INNER JOIN home_jobs ON home_jobs.job_id = skills_job_dim.job_id
+    GROUP by skills_dim.skills, skills_job_dim.skill_id
+    order by job_amount_per_skill DESC
+    limit 5
+```
 ### 3.1 For Business Analyst
 #### Skill Ranking:
   - SQL (1,266)
@@ -870,15 +891,602 @@ I used the following query to analyze the skills associated with top paying jobs
         Multi-language backend ecosystems remain relevant: SQL and Java maintain strong demand, indicating that 
         traditional enterprise systems and database-driven architectures are still a core part of software engineering roles.
 
-### The Most Demanded Skills Insights
-### <b>Key Insights</b>
+### 3.11 The Most Demanded Skills Insights
+<img src="images\02_23_15.png"><br>
+### <b>🔑 Key Insights</b>
 - The "Big Two" Monopoly: SQL and Python aren't just popular; they are the absolute foundation of the tech economy. Data Engineering alone demands over 28,000 combined mentions for these two;
 - The Seniority "Tool Drop": There is a ruthless shift as you level up. In junior/mid-level Analyst roles, BI tools like Excel, Tableau, and Power BI dominate the top 5. But in Senior Data roles, they completely vanish, replaced by heavy-hitters like Python, R, and Spark. The market is screaming: juniors build dashboards, seniors build architectures;
 - PyTorch Takes the ML Crown: In the Machine Learning Engineer category, PyTorch (571 jobs) has officially edged out TensorFlow (553 jobs);
-AWS is the Undisputed Cloud King: Across Cloud, Data, ML, and Software Engineering, AWS consistently crushes Azure in job volume. It is the default cloud standard.
+AWS is the Undisputed Cloud King: Across Cloud, Data, ML, and Software Engineering, AWS consistently crushes Azure in job volume. It is the default cloud standard.<br><br><br>
 
 ### 4. Top Skills (based on salary)
+I used the following query to analyze the best skills based on salary:
+```sql
+    SELECT
+        skills,
+        ROUND(AVG(salary_year_avg), 0) avg_salary
+    FROM job_postings_fact
+    INNER JOIN skills_job_dim ON skills_job_dim.job_id = job_postings_fact.job_id
+    INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+    WHERE job_title_short = 'Software Engineer' --type of role
+        AND salary_year_avg IS NOT NULL
+    GROUP BY skills
+    ORDER BY avg_salary DESC
+    LIMIT 25
+```
+### 4.1 For Business Analyst
+#### The strongest salary premiums are attached to skills that fall into one of three categories:
+  <b>a) Specialized backend engineering & high-performance systems:</b>
+  - Chef
+  - Ruby
+  - Node.js
+  - C
+  - Phoenix
+  - Electron
+
+  <b>b) Distributed systems, data infrastructure & cloud-scale processing:</b>
+  - Hadoop
+  - Airflow
+  - NoSQL
+  - MongoDB
+  - Cassandra
+  - Elasticsearch
+  - Snowflake
+
+  <b>c) Advanced analytics, machine learning & scientific computing:</b>
+  - NumPy
+  - Pandas
+  - PyTorch
+  - TensorFlow
+  - Scikit-learn
+  - Matlab
+  - Seaborn
+  - MXNet
+  - Chainer
+  - Julia
+
+          Overall, this dataset suggests that the highest salaries are driven less by general-purpose programming knowledge and more by expertise in systems that either scale to large distributed environments or support advanced machine learning and data-intensive workflows. The presence of both modern ML frameworks and older scientific computing tools also indicates that employers still pay a premium for deep quantitative and engineering capability, regardless of technology generation.
+### 4.2 For Cloud Engineer
+#### The strongest salary premiums are attached to skills that fall into one of four categories:
+
+<b>a) Systems programming & high-performance engineering:</b>
+- Rust
+- C++
+- Go
+- Swift
+- Java
+- JavaScript
+
+<b>b) Distributed systems, cloud infrastructure & data engineering platforms:</b>
+- Spark
+- Kafka
+- Airflow
+- Kubernetes
+- Databricks
+- Snowflake
+- DynamoDB
+- MongoDB
+- Elasticsearch
+- Neo4j
+- PySpark
+- SQL
+
+<b>c) DevOps, observability & engineering productivity ecosystems:</b>
+- Splunk
+- Ansible
+- Chef
+- GitHub
+
+<b>d) Advanced analytics & scientific computing (supporting layer):</b>
+- Matlab
+- Looker
+
+        Overall, this dataset suggests that the highest salaries are concentrated among engineers who operate close to systems-level performance boundaries (Rust, C++, Go) or manage large-scale distributed data ecosystems (Spark, Kafka, cloud databases, and orchestration platforms). Strong salary premiums also appear in DevOps and infrastructure automation capabilities, indicating that employers place the greatest value on skills that improve scalability, reliability, deployment efficiency, and production-grade system operations rather than isolated application development alone.
+### 4.3 For Data Analyst
+#### The strongest salary premiums are attached to skills that fall into one of four categories:
+
+<b>a) Legacy systems, niche infrastructure & high-leverage technical debt domains:</b>
+- SVN
+- Perl
+- VMware
+- Puppet
+- Couchbase
+- Bitbucket
+
+<b>b) Cloud infrastructure, DevOps automation & distributed systems engineering:</b>
+- Terraform
+- Ansible
+- Kafka
+- Airflow
+- GitLab
+- Atlassian
+- Twilio
+
+<b>c) Machine learning, deep learning & advanced AI tooling:</b>
+- Solidity
+- Keras
+- PyTorch
+- TensorFlow
+- Hugging Face
+- MXNet
+- DataRobot
+- Scala
+- Dplyr
+
+<b>d) Cross-cutting high-performance backend & systems languages:</b>
+- Golang
+- Scala
+
+        Overall, this dataset suggests a non-obvious pattern: the highest salary premiums are not only concentrated in modern “hot” technologies, but also in deep expertise with legacy or highly specialized systems (such as SVN and VMware), where scarcity of experienced engineers increases compensation levels. At the same time, strong demand remains for cloud automation, distributed systems, and AI/ML frameworks, reinforcing that top-paying roles tend to sit at the intersection of infrastructure reliability, scalability, and advanced computational capability rather than general-purpose software development alone.
+### 4.4 For Senior Data Analyst
+#### The strongest salary premiums are attached to skills that fall into one of four categories:
+
+<b>a) Legacy enterprise systems, infrastructure maintenance & high-friction environments:</b>
+- VMware
+- COBOL
+- Perl
+- PowerShell
+- PHP
+- jQuery
+- Zoom
+- Wire
+- Yarn
+
+<b>b) Scalable backend engineering & modern distributed systems:</b>
+- Go (Golang)
+- Rust
+- C++
+- Node
+- FastAPI
+- GraphQL
+- PostgreSQL
+- Neo4j
+- NoSQL
+- Airflow
+- Spark
+- GitLab
+- Phoenix
+
+<b>c) Data-heavy engineering, visualization & analytics tooling:</b>
+- Matplotlib
+
+<b>d) Cross-platform application & specialized domain engineering:</b>
+- Unity
+- Swift
+
+        Overall, this dataset reinforces a consistent pattern across all samples: the highest salaries are driven less by popularity and more by scarcity combined with business-critical responsibility. Extremely high salary premiums appear in legacy enterprise environments (VMware, COBOL), where relatively few engineers can safely maintain, modernize, or migrate critical systems. At the same time, strong compensation clusters around modern backend and distributed systems engineering (Go, Rust, FastAPI, GraphQL, Spark), where performance, scalability, and reliability directly impact business outcomes. The data also suggests that even widely adopted technologies can command premium compensation when they operate in critical infrastructure layers rather than general application development.
+### 4.5 For Data Engineer
+#### The strongest salary premiums are attached to skills that fall into one of three categories:
+
+<b>a) Specialized backend engineering:</b>
+- Node.js
+- MongoDB
+- Cassandra
+
+<b>b) Distributed systems & cloud infrastructure:</b>
+- Kafka
+- Kubernetes
+- Ubuntu
+- IBM Cloud
+
+<b>c) Advanced analytics & emerging technologies:</b>
+- ggplot2
+- NumPy
+- OpenCV
+- Solidity
+
+        Overall, this dataset suggests that salary growth is driven less by acquiring widely used tools and more by developing expertise in specialized technical domains where qualified talent remains scarce. Strong compensation signals appear around backend infrastructure, distributed platforms, and advanced analytical technologies, indicating that employers increasingly reward skills that enable scalability, performance, and differentiated technical capability.
+### 4.6 For Senior Data Engineer
+#### The strongest salary premiums are attached to skills that fall into one of four categories:
+
+<b>a) Machine learning, deep learning & computer vision ecosystems:</b>
+- MXNet
+- PyTorch
+- Keras
+- TensorFlow
+- OpenCV
+
+<b>b) Data infrastructure, databases & large-scale storage systems:</b>
+- Mongo
+- Cassandra
+- CouchDB
+- SQLite
+- MySQL
+- Redis
+- Redshift
+
+<b>c) Systems engineering, infrastructure tooling & cloud platforms:</b>
+- Arch
+- Shell
+- Terminal
+- OpenStack
+- Splunk
+
+<b>d) Application frameworks & backend development ecosystems:</b>
+- Node
+- Angular
+- Kotlin
+
+<b>e) Analytics, experimentation & productivity tooling:</b>
+- Matplotlib
+- Jupyter
+- Airtable
+- Zoom
+
+        Overall, this dataset suggests that the highest salaries consistently cluster around three main forces: deep machine learning expertise, scalable data infrastructure, and systems-level engineering. Across all samples, the strongest premium does not come from front-end or general-purpose tooling, but from skills that either enable large-scale computation (ML frameworks), manage high-volume data systems (databases and distributed storage), or ensure reliability and control at the infrastructure layer (shell, cloud platforms, observability tools).
+### 4.7 For Data Scientist
+#### The strongest salary premiums are attached to skills that fall into one of four categories:
+
+<b>a) Enterprise systems, platform engineering & high-trust infrastructure:</b>
+- RedHat
+- DynamoDB
+- Neo4j
+- BigQuery
+- CodeCommit
+- Airflow
+
+<b>b) Advanced AI/ML, symbolic computing & research-heavy frameworks:</b>
+- Watson
+- Hugging Face
+- Theano
+- Solidity
+- Haskell
+- RShiny
+- Dplyr
+
+<b>c) Specialized backend engineering & modern application development:</b>
+- Elixir
+- Lua
+- Ruby on Rails
+- Objective-C
+- Unity
+- Unreal
+
+<b>d) Productivity platforms & workflow-critical SaaS ecosystems:</b>
+- Asana
+- Airtable
+- Slack
+- Notion
+- Zoom
+- Atlassian
+
+Overall, this dataset continues a stable pattern: the highest salaries are concentrated in domains where expertise is either rare, deeply specialized, or tied to mission-critical systems. A notable signal is the coexistence of cutting-edge AI tooling (Hugging Face, Watson) with older or niche languages and platforms (Haskell, Objective-C, Ruby on Rails), showing that compensation is driven less by technology “trendiness” and more by scarcity of expertise and proximity to core business infrastructure.
+### 4.8 For Senior Data Scientist
+#### The strongest salary premiums are attached to skills that fall into one of five categories:
+
+<b>a) Backend engineering, systems programming & high-reliability services:</b>
+- C#
+- Go
+- Flask
+- Express
+- Linux
+- Terminal
+
+<b>b) Data infrastructure, distributed systems & large-scale storage:</b>
+- Cassandra
+- Neo4j
+- Spark
+- SQLite
+- Airflow
+- Ansible
+
+<b>c) Data science, visualization & analytical tooling:</b>
+- Plotly
+- Seaborn
+- Matplotlib
+- Jupyter
+- Tidyverse
+
+<b>d) Collaboration, DevOps & enterprise SaaS ecosystems:</b>
+- GitLab
+- Zoom
+- RingCentral
+- Airtable
+- Planner
+
+<b>e) ML/AI & applied intelligent systems:</b>
+- Watson
+- Keras
+
+Overall, this dataset reinforces a consistent pattern across all samples: the highest salary premiums are driven by proximity to production-critical systems rather than surface-level popularity of tools. Strong compensation clusters around backend engineering languages (C#, Go), distributed data systems (Spark, Cassandra, Neo4j), and operational tooling that ensures reliability and scalability (Linux, Airflow, Ansible). At the same time, data science and visualization tools remain well-compensated when embedded in high-impact decision pipelines, while enterprise SaaS platforms and communication infrastructure reflect the premium placed on tools that directly support organizational productivity and uptime.
+### 4.9 For Machine Learning Engineer
+#### The strongest salary premiums are attached to skills that fall into one of six categories:
+
+<b>a) Functional programming, systems design & high-reliability engineering languages:</b>
+- Haskell
+- Clojure
+- Scala
+- Rust
+- Go (Golang)
+- Kotlin
+- Swift
+- C
+
+<b>b) Data infrastructure, storage systems & cloud-scale analytics:</b>
+- PostgreSQL
+- Redis
+- Redshift
+- BigQuery
+- Airflow
+
+<b>c) Business intelligence, reporting & decision-layer tooling:</b>
+- Looker
+- Qlik
+- Excel
+- Sheets
+- Spreadsheet
+
+<b>d) DevOps, automation & infrastructure management:</b>
+- Chef
+
+<b>e) Backend frameworks & application development ecosystems:</b>
+- Flask
+- TypeScript
+
+<b>f) Advanced AI / applied ML tooling:</b>
+- Hugging Face
+- Julia
+
+Overall, this dataset shows a consistent and increasingly clear structure across all samples: the highest salary premiums are driven by scarcity of expertise combined with proximity to production-critical systems. Functional and systems-level languages (Haskell, Rust, Scala) remain highly rewarded due to their steep learning curve and use in high-reliability environments. At the same time, cloud-scale data infrastructure (PostgreSQL, BigQuery, Redis, Airflow) continues to dominate compensation because it directly powers analytics and decision-making pipelines. Even “simple” tools like Excel and Sheets command strong salaries when embedded in high-impact business intelligence roles, reinforcing that value comes less from the tool itself and more from the strategic layer in which it is used.
+### 4.10 For Software Engineer
+#### The strongest salary premiums are attached to skills that fall into one of six categories:
+
+<b>a) Functional programming, systems design & high-reliability engineering languages:</b>
+- Haskell
+- Clojure
+- Scala
+- Rust
+- Go (Golang)
+- Kotlin
+- Swift
+- C
+
+<b>b) Data infrastructure, storage systems & cloud-scale analytics:</b>
+- PostgreSQL
+- Redis
+- Redshift
+- BigQuery
+- Airflow
+
+<b>c) Business intelligence, reporting & decision-layer tooling:</b>
+- Looker
+- Qlik
+- Excel
+- Sheets
+- Spreadsheet
+
+<b>d) DevOps, automation & infrastructure management:</b>
+- Chef
+
+<b>e) Backend frameworks & application development ecosystems:</b>
+- Flask
+- TypeScript
+
+<b>f) Advanced AI / applied ML tooling:</b>
+- Hugging Face
+- Julia
+
+        Overall, this dataset shows a consistent and increasingly clear structure across all samples: the highest salary premiums are driven by scarcity of expertise combined with proximity to production-critical systems. Functional and systems-level languages (Haskell, Rust, Scala) remain highly rewarded due to their steep learning curve and use in high-reliability environments. At the same time, cloud-scale data infrastructure (PostgreSQL, BigQuery, Redis, Airflow) continues to dominate compensation because it directly powers analytics and decision-making pipelines. Even “simple” tools like Excel and Sheets command strong salaries when embedded in high-impact business intelligence roles, reinforcing that value comes less from the tool itself and more from the strategic layer in which it is used.
+
+
+### 4.11 Top Skills (based on salary) Insights
+### <b>🔑 Key Insights</b>
+- Systems & low-level languages dominate the highest salaries: Across roles, languages like Rust, C++, C, Go, and Swift consistently appear at the top of compensation ranges. This signals that deep systems knowledge and performance-critical engineering are among the most financially rewarded skill sets;<br><br>
+- Legacy + enterprise infrastructure skills still pay exceptionally well: Tools like VMware ($375K), SVN ($400K outlier), Chef ($220K), Debian (~$196K), and Splunk (~$180K+) show that maintaining large, complex enterprise environments is highly lucrative—often more than modern “trendy” tools;<br><br>
+- Advanced distributed systems = stable high-income band: Technologies such as Kafka, Cassandra, Spark, Redis, Kubernetes, and Airflow consistently sit in the ~$130K–$170K+ range across nearly all roles, making them the most reliable “high salary baseline” skill cluster;<br><br>
+- Machine learning frameworks are no longer premium differentiators: PyTorch, TensorFlow, Keras, Scikit-learn, MXNet all cluster tightly around similar salary levels (~$120K–$175K), meaning the real premium now comes from system design and deployment—not just model building;<br><br>
+- Data platform tools form the “middle-high elite tier”: Snowflake, Databricks, BigQuery, Redshift, Looker consistently appear in strong salary bands (~$135K–$165K), reflecting the value of cloud data warehousing and analytics infrastructure;<br><br>
+Cross-stack versatility drives top-end compensation: The highest-paying profiles often combine backend + data + DevOps + cloud skills (e.g., MongoDB + Go + Kubernetes + Kafka), showing that breadth across infrastructure layers is more valuable than specialization alone;<br><br>
+- Surprising productivity tools appear in high-paying roles: Tools like Slack, Zoom, Airtable, Notion, Excel show up in higher salary brackets in senior ML and data roles, likely reflecting leadership-heavy or hybrid technical-management positions.<br><br><br>
+
+
 ### 5. Most Optimal Skill To Learn
+I used the following query to analyze the most optimal skills for learning:
+```sql
+    --NB: I know that this query can be shorter*
+    with high_demand AS (
+        SELECT
+            skills_dim.skill_id,
+            skills_dim.skills, 
+            count(skills_job_dim.job_id) job_amount_per_skill
+        FROM job_postings_fact
+        INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+        INNER JOIN skills_dim ON skills_dim.skill_id = skills_job_dim.skill_id
+        where 
+            job_title_short = 'Data Analyst' --type of role
+            AND salary_year_avg IS NOT NULL
+        GROUP by skills_dim.skill_id
+    ), top_paid AS (
+        SELECT
+            skills_dim.skill_id,
+            ROUND(AVG(salary_year_avg), 0) avg_salary
+        FROM job_postings_fact
+        INNER JOIN skills_job_dim ON skills_job_dim.job_id = job_postings_fact.job_id
+        INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+        WHERE job_title_short = 'Data Analyst' --type of role
+            AND salary_year_avg IS NOT NULL
+        GROUP BY skills_dim.skill_id
+    )
+
+    SELECT high_demand.skill_id, high_demand.skills, job_amount_per_skill, avg_salary
+    FROM high_demand
+    INNER JOIN top_paid ON high_demand.skill_id = top_paid.skill_id
+    WHERE job_amount_per_skill>20
+    ORDER BY
+        avg_salary DESC,
+        job_amount_per_skill DESC
+    limit 25
+```
+### 5.1 For Business Analyst
+#### <b>Best skill by category</b>
+
+<b>Highest salary:</b> Snowflake
+
+<b>Highest demand:</b> SQL
+
+<b>Best balance of salary and demand:</b> Python
+
+  Why Python stands out:
+
+    - Very strong demand (143 postings)
+    - Mid-to-high salary ($104k) with room for scaling upward in advanced roles
+    - Acts as a multiplier skill: unlocks AWS, Snowflake, automation, ML, and data engineering roles
+    - Best long-term ROI because it connects multiple high-paying ecosystems
+### 5.2 For Cloud Engineer
+#### <b>Best skill by category:</b>
+
+<b>Highest salary:</b> Python
+<b>Highest demand:</b> Python
+<b>Best balance of salary and demand:</b> Python
+
+Why Python stands out:
+
+  - Leads both in demand and salary in this dataset
+  - Serves as a foundational layer for both cloud (AWS) and engineering roles
+  - Increases employability across multiple domains, not just one niche
+  - Acts as a gateway skill into higher-paying distributed systems and data engineering work
+### 5.3 For Data Analyst
+#### <b>Best skill by category</b>
+
+<b>Highest salary:</b> Kafka
+<b>Highest demand:</b> Snowflake
+<b>Best balance of salary and demand:</b> Spark  
+
+#### <b>Why Spark stands out:</b>
+
+- Extremely high demand (187 postings)  
+- Strong salary (~$113k) with room for growth  
+- Central component in modern data engineering stacks  
+- Sits at the intersection of batch processing, streaming, and ML pipelines  
+- Often required alongside Kafka, Airflow, and Snowflake, making it a “hub skill”
+### 5.4 For Senior Data Analyst
+#### <b>Best skill by category</b>
+
+<b>Highest salary:</b> Airflow
+
+<b>Highest demand:</b> SQL
+
+<b>Best balance of salary and demand:</b> Python
+
+<b>Why Python stands out:</b>
+
+  - Extremely high demand (464 postings)  
+  - Strong salary (~$119k) with clear upward mobility  
+  - Sits at the center of nearly every modern data stack  
+  - Enables work across cloud (AWS), big data (Spark), orchestration (Airflow), and ML (Databricks)  
+  - Acts as the universal “connective tissue” skill in high-paying roles  
+### 5.5 For Data Engineer
+#### <b>Best skill by category</b>
+
+<b>Highest salary:</b> Kubernetes
+
+<b>Highest demand:</b> Python
+
+<b>Best balance of salary and demand:</b> Kafka
+
+<b>Why Kafka stands out:</b>
+
+  - Salary is nearly $151k (much higher than Python, AWS, Snowflake)  
+  - Demand is still substantial (134 postings)  
+  - Often required in advanced data engineering and distributed systems roles  
+  - Signals expertise beyond entry-level data engineering  
+### 5.6 For Senior Data Engineer
+#### <b>Best skill by category</b>
+
+<b>Highest salary:</b> Redshift ($156,521)
+
+<b>Highest demand:</b> Python (1155 postings)
+
+<b>Best balance of salary and demand:</b> Spark
+
+<b>Why Spark stands out:</b>
+
+  - Extremely high demand (710 postings)  
+  - Very strong salary (~$152k)  
+  - Central execution layer for modern data platforms  
+  - Bridges batch processing, streaming (Kafka), and cloud warehouses (Snowflake/Redshift)  
+  - Required in a large share of high-paying data engineering roles
+### 5.7 For Data Scientist
+#### <b>Best skill by category</b>
+
+<b>Highest salary:</b> Neo4j
+
+<b>Highest demand:</b> SQL
+
+<b>Best balance of salary and demand:</b> Spark
+
+<b>Why Spark stands out:</b>
+
+  - Extremely high demand (946 postings)  
+  - Very strong salary (~$144k)  
+  - Central execution layer across data engineering + ML pipelines  
+  - Bridges cloud (AWS/GCP), storage (Snowflake/BigQuery), and streaming (Kafka)  
+  - One of the most universally required “senior signal” skills  
+### 5.8 For Senior Data Scientist
+#### <b>Best skill by category</b>
+
+<b>Highest salary:</b> C#
+
+<b>Highest demand:</b> Python
+
+<b>Best balance of salary and demand:</b> Spark
+
+<b>Why Spark stands out:</b>
+
+  - Strong demand (345 postings)  
+  - Very high salary (~$164k)  
+  - Central execution engine across modern data platforms  
+  - Connects storage (SQL/Snowflake), streaming (Kafka), orchestration (Airflow), and ML workflows  
+  - One of the most consistent “senior engineer signal” skills in the dataset  
+### 5.9 For Machine Learning Engineer
+#### <b>Best skill by category</b>
+
+<b>Highest salary:</b> Scala
+
+<b>Highest demand:</b> Python
+
+<b>Best balance of salary and demand:</b> Spark
+
+<b>Why Spark stands out:</b>
+
+  - Strong demand (113 postings)  
+  - High salary (~$139k)  
+  - Central processing engine across modern data platforms  
+  - Bridges cloud (AWS/GCP), orchestration (Airflow), storage systems, and ML workflows  
+  - One of the most consistently required skills in senior data engineering roles  
+### 5.10 For Software Engineer
+#### <b>Best skill by category</b>
+
+<b>Highest salary:</b> Go ($142,748)
+
+<b>Highest demand:</b> Python (204 postings)
+
+<b>Best balance of salary and demand:</b> Go
+
+<b>Why Go stands out:</b>
+
+  - Strong salary (~$143k) with solid demand (64 postings)  
+  - High-performance systems language used in cloud infrastructure and distributed systems  
+  - Frequently appears in backend, DevOps, and platform engineering roles  
+  - Represents a “modern infrastructure engineer” skill rather than legacy systems
+
+### 5.11 Most Optimal Skill To Learn Insights
+### <b>🔑 Key Insights</b>
+- The “High-Salary Core Stack” is surprisingly consistent across roles
+Python, AWS, Spark, and Airflow repeatedly appear across Data, Engineering, ML, and Senior roles with strong salaries (~$120K–$150K+). These are not niche skills — they form the universal backbone of modern data + cloud careers;<br><br>
+- Cloud + Data Platforms = the real salary accelerator
+Snowflake, Databricks, BigQuery, Redshift, and Looker consistently sit in high-paying ranges across roles (often $130K–$160K+ in senior tracks). The market clearly rewards people who can work with managed data infrastructure, not just coding;<br><br>
+- Distributed systems skills dominate high-end engineering pay
+Kafka, Spark, Kubernetes, and Hadoop show up heavily in Data Engineer and Senior roles with some of the highest salaries in the dataset (often $150K+). These skills define “scale engineering” — and that’s where top compensation sits;<br><br>
+- BI tools are valuable early, but lose strategic weight in senior roles
+Tableau, Power BI, Excel, SSRS, and PowerPoint are common in Analyst roles but drop sharply in Senior/Engineering tracks. They help you enter the field — but they don’t drive long-term salary growth;<br><br>
+- Go, Scala, and Java are quiet but powerful salary boosters
+While not the most frequently listed, these languages consistently correlate with high-paying roles across Engineering and Data roles, especially in distributed systems and backend-heavy environments;<br><br>
+- AI/ML frameworks are strong but specialized high-pay multipliers
+PyTorch, TensorFlow, and Scikit-learn appear mostly in Data Science / ML Engineer tracks with high salaries (~$133K–$160K+), but they are more role-specific than foundational;<br><br>
+- Clear “optimal learning path” emerges from the data
+The highest ROI skill stack is not a single tool but a combination:
+Python + SQL + Cloud (AWS/GCP/Azure) + Data Platform (Snowflake/Databricks) + Distributed Systems (Spark/Kafka)
 
 
 <br><br><br><br><br><br>
